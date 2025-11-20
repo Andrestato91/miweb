@@ -1,13 +1,25 @@
+/* ===========================
+   PALETA DE COLORES FullOps
+=========================== */
+:root {
+  --harbor-sky: #0A2B30;
+  --dockside: #2B2B28;
+  --pearl: #E2E222;
+  --sandstone-dark: #0A2B34;
+  --sandstone-light: #D1A574;
+  --azure-accent: #00A6FF;
+}
+
 body {
     margin: 0;
-    font-family: Plus Jakarta Sans Bold, sans-serif;
-    background: #fafafa;
-    color: #333;
+    font-family: Arial, sans-serif;
+    background: var(--pearl);
+    color: var(--dockside);
 }
 
 /* NAV */
 header {
-    background: white;
+    background: var(--pearl);
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
@@ -28,7 +40,7 @@ header {
 }
 .menu a {
     text-decoration: none;
-    color: #333;
+    color: var(--dockside);
     font-weight: bold;
 }
 
@@ -40,18 +52,18 @@ header {
     text-align: center;
 }
 .alt {
-    background: #f3f3f3;
+    background: var(--sandstone-light);
 }
 
 /* HERO */
 .hero {
-    background: linear-gradient(135deg, #007bff, #00b7ff);
-    color: white;
+    background: linear-gradient(135deg, var(--azure-accent), var(--harbor-sky));
+    color: var(--pearl);
     padding: 120px 20px;
 }
 .hero .btn {
-    background: white;
-    color: #007bff;
+    background: var(--pearl);
+    color: var(--azure-accent);
     padding: 12px 25px;
     border-radius: 5px;
     text-decoration: none;
@@ -65,7 +77,7 @@ header {
     gap: 20px;
 }
 .card {
-    background: white;
+    background: var(--pearl);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -82,13 +94,13 @@ header {
 .contact-form textarea {
     padding: 12px;
     border-radius: 5px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--sandstone-dark);
 }
 .contact-form button {
     padding: 12px;
     border: none;
-    background: #007bff;
-    color: white;
+    background: var(--azure-accent);
+    color: var(--pearl);
     border-radius: 5px;
     cursor: pointer;
 }
@@ -96,7 +108,6 @@ header {
 footer {
     text-align: center;
     padding: 20px;
-    background: #222;
-    color: white;
+    background: var(--dockside);
+    color: var(--pearl);
 }
-
