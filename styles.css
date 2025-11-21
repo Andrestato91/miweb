@@ -161,3 +161,56 @@ footer {
 .whatsapp-container:hover .whatsapp-text {
   transform: scale(1.05);
 }
+/* ================
+   MENÚ MÓVIL
+================ */
+
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Sidebar (oculto por defecto) */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: var(--harbor-sky);
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 20px;
+}
+
+/* Cuando se abre */
+.mobile-menu.open {
+  left: 0;
+}
+
+/* ================
+   RESPONSIVE
+================ */
+
+@media (max-width: 768px) {
+  /* Mostrar hamburguesa en móvil */
+  .hamburger {
+    display: block;
+  }
+
+  /* Ocultar menú normal en móvil */
+  .menu {
+    display: none;
+  }
+}
