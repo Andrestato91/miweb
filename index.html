@@ -11,17 +11,32 @@
 
     <!-- NAV -->
     <header>
-        <nav class="nav">
-            <div class="logo">FullOps Group</div>
-            <ul class="menu">
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#nosotros">Quiénes Somos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+       <nav class="nav">
+    <div class="logo">FullOps Group</div>
+
+    <!-- Botón Hamburguesa (solo móvil) -->
+    <div class="hamburger" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <!-- Menú normal (escritorio) -->
+    <ul class="menu">
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#nosotros">Quiénes Somos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+</nav>
     </header>
 
+<!-- SIDEBAR (solo móvil) -->
+<div id="mobileMenu" class="mobile-menu">
+    <a href="#home" onclick="toggleMenu()">Inicio</a>
+    <a href="#servicios" onclick="toggleMenu()">Servicios</a>
+    <a href="#nosotros" onclick="toggleMenu()">Quiénes Somos</a>
+    <a href="#contacto" onclick="toggleMenu()">Contacto</a>
+</div>
+    
     <section id="home" class="section hero">
         <h1>Bienvenido a FullOps Group</h1>
         <p>
@@ -80,8 +95,16 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
          alt="WhatsApp" class="whatsapp-icon">
 </a>
+  
+    <script>
+function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("open");
+}
+</script>
+    
 </body>
 </html>
+
 
 
 
