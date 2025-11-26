@@ -267,3 +267,9 @@ footer {
     from { opacity: 0; transform: translateY(-5px); }
     to { opacity: 1; transform: translateY(0); }
 }
+/* Ocultar automáticamente el mensaje después de 4s */
+.form-message.hide {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
