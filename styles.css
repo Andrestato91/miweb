@@ -64,6 +64,14 @@ header {
   text-align: center;
 }
 
+/* 🔥 Ajuste de colores para que se vea sobre el fondo */
+#servicios,
+#servicios h2,
+#servicios p {
+  color: white;
+}
+
+
 .alt {
   background: var(--sandstone-light);
 }
@@ -230,6 +238,7 @@ footer {
     display: none;
   }
 }
+
 
 
 
