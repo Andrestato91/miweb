@@ -80,10 +80,12 @@ header {
 
 /* Seccion Nosotros */
 .alt {
-  background: rgba(10, 43, 48, 0.35);
-  backdrop-filter: blur(6px);
-  border-radius: 25px;
+  background: rgba(10, 43, 48, 0.75); /* fondo oscuro elegante */
+  color: white;                       /* texto blanco */
+  border-radius: 25px;                /* opcional, estilo como el hero */
+  backdrop-filter: blur(6px);         /* efecto vidrio */
 }
+
 
 /* HERO */
 .hero {
@@ -247,6 +249,7 @@ footer {
     display: none;
   }
 }
+
 
 
 
