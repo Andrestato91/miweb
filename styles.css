@@ -77,8 +77,12 @@ header {
 #servicios .card p {
   color: var(--dockside); /* tu color negro/gris oscuro */
 }
+
+/* Seccion Nosotros */
 .alt {
-  background: var(--sandstone-light);
+  background: rgba(10, 43, 48, 0.35);
+  backdrop-filter: blur(6px);
+  border-radius: 25px;
 }
 
 /* HERO */
@@ -243,6 +247,7 @@ footer {
     display: none;
   }
 }
+
 
 
 
