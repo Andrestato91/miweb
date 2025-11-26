@@ -72,21 +72,30 @@
         </p>
     </section>
 
-    <section id="contacto" class="section">
-        <h2>¿Interesado en nuestros servicios?</h2>
-    <form id="contactForm" class="contact-form">
-    <input type="text" name="name" placeholder="Nombre" required />
-    <input type="email" name="email" placeholder="Correo" required />
-    <input type="text" name="telefono" placeholder="Teléfono" required />
-    <textarea name="mensaje" placeholder="Mensaje" required></textarea>
-    <button type="submit">Enviar</button>
-</form>
+<section id="contacto" class="section">
+    <h2>¿Interesado en nuestros servicios?</h2>
+
+    <form id="contactForm" class="contact-form" action="https://formsubmit.co/sales@fullopsgroup.com" method="POST">
+
+        <!-- Campos FormSubmit necesarios -->
+        <input type="hidden" name="_next" value="https://fullopsgroup.com/#contacto">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Nuevo mensaje desde FullOps Group">
+
+        <!-- Campos del usuario -->
+        <input type="text" name="name" placeholder="Nombre" required />
+        <input type="email" name="email" placeholder="Correo" required />
+        <input type="text" name="telefono" placeholder="Teléfono" required />
+        <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
 
 <!-- Mensaje de éxito -->
-<div id="formMessage" class="form-message" style="display:none;">
-    ¡Mensaje enviado con éxito! Te responderemos pronto.
-</div>
-    </section>
+    <div id="formMessage" class="form-message" style="display:none;">
+        ¡Mensaje enviado con éxito! Te responderemos pronto.
+    </div>
+</section>
 
     <footer>
         <p>© 2025 FullOps Group - Todos los derechos reservados.</p>
@@ -109,33 +118,40 @@ function toggleMenu() {
 </script>
 <script>
 document.getElementById("contactForm").addEventListener("submit", async function(e) {
-    e.preventDefault(); // evita recargar la página
+    e.preventDefault(); 
 
     const form = e.target;
     const formData = new FormData(form);
 
-    // URL de formsubmit con tu correo
-    const url = "https://formsubmit.co/sales@fullopsgroup.com";
-
     try {
-        await fetch(url, {
+        await fetch(form.action, {
             method: "POST",
-            body: formData
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
         });
 
         // mostrar mensaje
-        document.getElementById("formMessage").style.display = "block";
+        const msg = document.getElementById("formMessage");
+        msg.style.display = "block";
+
+        // desaparecer después de 4s
+        setTimeout(() => {
+            msg.style.opacity = "0";
+            setTimeout(() => msg.remove(), 1000);
+        }, 4000);
 
         // limpiar formulario
         form.reset();
+
     } catch (error) {
         alert("Hubo un error, intenta nuevamente.");
     }
 });
 </script>
- 
-</body>
+    
+ </body>
 </html>
+
 
 
 
