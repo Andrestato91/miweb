@@ -19,7 +19,7 @@ body {
   color: var(--dockside);
 
   /* Fondo */
-  background-image: url("Background.png");
+  background-image: url("fondo.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -220,3 +220,4 @@ footer {
     display: none;
   }
 }
+
