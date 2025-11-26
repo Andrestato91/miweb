@@ -118,39 +118,45 @@ function toggleMenu() {
 </script>
 <script>
 document.getElementById("contactForm").addEventListener("submit", async function(e) {
-    e.preventDefault(); 
+    e.preventDefault();
 
     const form = e.target;
     const formData = new FormData(form);
 
     try {
-        await fetch(form.action, {
+        const response = await fetch(form.action, {
             method: "POST",
+            mode: "cors",
+            redirect: "follow",  // permite redirecciones
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(formData).toString()
         });
 
-        // mostrar mensaje
-        const msg = document.getElementById("formMessage");
-        msg.style.display = "block";
+        // Si FormSubmit responde con 200 o 0, se considera éxito
+        if (response.ok || response.status === 0) {
+            const msg = document.getElementById("formMessage");
+            msg.style.display = "block";
 
-        // desaparecer después de 4s
-        setTimeout(() => {
-            msg.style.opacity = "0";
-            setTimeout(() => msg.remove(), 1000);
-        }, 4000);
+            // desaparecer despues de 4s
+            setTimeout(() => {
+                msg.style.opacity = "0";
+                setTimeout(() => msg.remove(), 1000);
+            }, 4000);
 
-        // limpiar formulario
-        form.reset();
+            form.reset();
+        } else {
+            alert("Hubo un error inesperado, pero tu mensaje puede haberse enviado.");
+        }
 
     } catch (error) {
-        alert("Hubo un error, intenta nuevamente.");
+        alert("Error de conexión. Intenta nuevamente.");
     }
 });
 </script>
-    
+
  </body>
 </html>
+
 
 
 
