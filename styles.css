@@ -64,14 +64,19 @@ header {
   text-align: center;
 }
 
-/* 🔥 Ajuste de colores para que se vea sobre el fondo */
+/* 🎯 Sección Servicios: títulos y textos generales en blanco */
 #servicios,
 #servicios h2,
-#servicios p {
+#servicios > p {
   color: white;
 }
 
-
+/* 🔙 Restaurar color negro SOLO dentro de las tarjetas */
+#servicios .card,
+#servicios .card h3,
+#servicios .card p {
+  color: var(--dockside); /* tu color negro/gris oscuro */
+}
 .alt {
   background: var(--sandstone-light);
 }
@@ -238,6 +243,7 @@ footer {
     display: none;
   }
 }
+
 
 
 
