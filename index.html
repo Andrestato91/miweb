@@ -74,13 +74,18 @@
 
     <section id="contacto" class="section">
         <h2>¿Interesado en nuestros servicios?</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Nombre" required />
-            <input type="email" placeholder="Correo" required />
-            <input type="telefono" placeholder="telefono" required />
-            <textarea placeholder="Mensaje" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
+    <form class="contact-form" action="https://formsubmit.co/sales@fullopsgroup.com" method="POST">
+    <input type="text" name="Nombre" placeholder="Nombre" required />
+    <input type="email" name="Correo" placeholder="Correo" required />
+    <input type="text" name="Telefono" placeholder="Teléfono" required />
+    <textarea name="Mensaje" placeholder="Mensaje" required></textarea>
+    <!-- Opcionales -->
+    <input type="hidden" name="_subject" value="Nuevo mensaje desde FullOps Group">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="box">
+    <button type="submit">Enviar</button>
+</form>
+
     </section>
 
     <footer>
@@ -105,6 +110,7 @@ function toggleMenu() {
     
 </body>
 </html>
+
 
 
 
