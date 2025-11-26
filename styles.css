@@ -16,8 +16,14 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #ffffff; /* Fondo blanco para evitar el verde */
   color: var(--dockside);
+
+  /* Fondo */
+  background-image: url("Background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* NAV */
@@ -214,11 +220,3 @@ footer {
     display: none;
   }
 }
-body {
-    background-image: url("Background.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* opcional */
-}
-
