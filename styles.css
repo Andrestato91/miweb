@@ -70,9 +70,14 @@ header {
 
 /* HERO */
 .hero {
-  background: linear-gradient(135deg, var(--harbor-sky), var(--azure-accent));
+  background: linear-gradient(
+    135deg,
+    rgba(10, 43, 48, 0.75),   /* harbor-sky con transparencia */
+    rgba(0, 166, 255, 0.55)   /* azure-accent con transparencia */
+  );
   color: #ffffff;
   padding: 120px 20px;
+  backdrop-filter: blur(6px);  /* efecto vidrio suave */
 }
 
 .hero .btn {
@@ -220,4 +225,5 @@ footer {
     display: none;
   }
 }
+
 
